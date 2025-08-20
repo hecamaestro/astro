@@ -1,0 +1,28 @@
+---
+import astroLogo from '../assets/astro.svg';
+
+---
+<div class="nav-container">
+    <img src={astroLogo.src}/ class="logo">
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/demo/">Blog</a>
+    </div>
+    <button class="dropdown" aria-label="Toggle Menu">☰</button>
+</div>
+
+<style>
+    .dropdown {
+        margin: 0 0 0 24px;
+        padding: 0;
+        height: 64px;
+        width: 64px;
+        color: white;
+        font-size: larger;
+        text-align: center;
+        text-decoration: none;
+        border-style: none;
+        background: none;
+    }
+</style>

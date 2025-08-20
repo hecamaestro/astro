@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro'
+import BlogPost from '../components/BlogPost.astro';
+
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+const pageTitle = "Demo Page";
+---
+
+<Layout>
+    <div id="container">
+        <aside>
+            <div class="post_list">
+                <h2>Posts</h2>
+
+                <ul>
+                    {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+                </ul>
+            </div>
+        </aside>
+        <main>
+        </main>
+    </div>
+</Layout>
+
+<style>
+    #container {
+        display: flex;
+    }
+
+    aside {
+    flex: 0 0 200px;
+    }
+
+    main {
+        flex: 1;
+        overflow-y: auto;
+        background: #f9f9f9;
+    }
+
+    .post_list {
+        left: 0;
+    }
+</style>
